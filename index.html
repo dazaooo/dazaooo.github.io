@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/12/05/2019-01-03/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/01/03/2020-01-03/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="赵大枣">
@@ -251,7 +251,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2019/12/05/2019-01-03/" itemprop="url">如何使用 Docker 部署Sentry</a></h1>
+                <a class="post-title-link" href="/2020/01/03/2020-01-03/" itemprop="url">如何使用 Docker 部署Sentry</a></h1>
         
 
         <div class="post-meta">
@@ -263,8 +263,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-12-05T18:21:47+08:00">
-                2019-12-05
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-01-03T00:00:00+08:00">
+                2020-01-03
               </time>
             
 
@@ -282,9 +282,9 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2019/12/05/2019-01-03/#comments" itemprop="discussionUrl">
+                <a href="/2020/01/03/2020-01-03/#comments" itemprop="discussionUrl">
                   <span class="post-comments-count disqus-comment-count"
-                        data-disqus-identifier="2019/12/05/2019-01-03/" itemprop="commentCount"></span>
+                        data-disqus-identifier="2020/01/03/2020-01-03/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -314,23 +314,22 @@
       
         
           
-            <p><strong>环境：osx 部署前准备：本机安装docker并启动</strong></p>
-<ol>
-<li>在当前服务器下载onpremise 项目 </li>
+            <h2 id="环境：osx-部署前准备：本机安装docker并启动"><a href="#环境：osx-部署前准备：本机安装docker并启动" class="headerlink" title="环境：osx 部署前准备：本机安装docker并启动"></a><strong>环境：osx 部署前准备：本机安装docker并启动</strong></h2><ol>
+<li>在当前服务器下载onpremise 项目</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git <span class="built_in">clone</span> https://github.com/getsentry/onpremise.git</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/getsentry/onpremise.git</span><br></pre></td></tr></table></figure>
 <ol>
 <li>进入onpremise 项目，切换到stable1分支(实测最新分支，stamp协议无法发送报警邮件)</li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> onpremise</span><br><span class="line">git checkout -b stable1 stable1</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><figcaption><span>onpremise</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b stable1 stable1</span><br></pre></td></tr></table></figure>
 <ol>
 <li>更改邮箱配置(我这里用的腾讯的企业邮箱) </li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">vim config.yml</span><br><span class="line"></span><br><span class="line"><span class="comment"># 更改如下参数</span></span><br><span class="line"> mail.backend: <span class="string">'django_smtp_ssl.SSLEmailBackend'</span></span><br><span class="line"> mail.host: <span class="string">'smtp.exmail.qq.com'</span></span><br><span class="line"> mail.port: 465</span><br><span class="line"> mail.username: <span class="string">'xxx@qq.com'</span></span><br><span class="line"> mail.password: <span class="string">'xxx'</span></span><br><span class="line"> mail.use-tls: <span class="literal">false</span></span><br><span class="line"><span class="comment"># 用来发送报警邮件的邮箱</span></span><br><span class="line"> mail.from: <span class="string">'xxx@qq.com'</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">vim config.yml</span><br><span class="line"></span><br><span class="line">更改如下参数</span><br><span class="line">mail.backend: &apos;django_smtp_ssl.SSLEmailBackend&apos;</span><br><span class="line">mail.host: &apos;smtp.exmail.qq.com&apos;</span><br><span class="line">mail.port: 465</span><br><span class="line">mail.username: &apos;xxx@qq.com&apos;</span><br><span class="line">mail.password: &apos;xxx&apos;</span><br><span class="line">mail.use-tls: false</span><br><span class="line">mail.from: &apos;xxx@qq.com&apos;  # 用来发送报警邮件的邮箱</span><br></pre></td></tr></table></figure>
 <ol>
 <li>添加sentry 钉钉机器人插件与发送邮件所需 django_smtp_ssl </li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim requirements.txt</span><br><span class="line"></span><br><span class="line"><span class="comment"># 添加如下代码，默认从pypi上下载插件</span></span><br><span class="line"></span><br><span class="line">django-smtp-ssl~=1.0 <span class="comment"># 邮箱SSL</span></span><br><span class="line">sentry-dingtalk-new  <span class="comment"># sentry钉钉插件</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">vim requirements.txt</span><br><span class="line"></span><br><span class="line"># 添加如下代码，默认从pypi上下载插件</span><br><span class="line"></span><br><span class="line">django-smtp-ssl~=1.0 # 邮箱SSL</span><br><span class="line">sentry-dingtalk-new  # sentry钉钉插件</span><br></pre></td></tr></table></figure>
 <ol>
 <li>sentry 初始化</li>
 </ol>
@@ -341,12 +340,12 @@
 <ol>
 <li>启动sentry </li>
 </ol>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
 <ol>
 <li><p>如果配置有更新(添加插件，更改邮箱配置)，重复5， 6</p>
 </li>
 <li><p>如需重新部署，进行如下操作，以下操作会清空sentry数据库，并充值superuser</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker-compose build --pull</span><br><span class="line">docker-compose run --rm web upgrade</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker-compose build --pull</span><br><span class="line">docker-compose run --rm web upgrade</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 
