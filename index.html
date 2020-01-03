@@ -327,11 +327,8 @@
 <li><p>添加sentry 钉钉机器人插件与发送邮件所需 django_smtp_ssl</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">vim requirements.txt</span><br><span class="line"></span><br><span class="line">添加如下代码，默认从pypi上下载插件</span><br><span class="line">django-smtp-ssl~=1.0 # 邮箱SSL</span><br><span class="line">sentry-dingtalk-new  # sentry钉钉插件</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>sentry 初始化</p>
-<ul>
-<li>中间会提示创建用户名，密码，依次输入即可<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<li><p>sentry 初始化 (中间会提示创建用户名，密码，依次输入即可)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>启动sentry</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
