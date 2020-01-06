@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="枣">
 <meta property="og:description" content="环境：osx 部署前准备：本机安装docker并启动 在当前服务器下载onpremise 项目 1git clone https://github.com/getsentry/onpremise.git  进入onpremise 项目，切换到stable1分支(实测最新分支，stamp协议无法发送报警邮件) 12cd onpremisegit checkout -b stable1 stable1">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2020-01-03T10:31:10.698Z">
+<meta property="og:updated_time" content="2020-01-06T03:43:54.703Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="如何使用 Docker 部署Sentry">
 <meta name="twitter:description" content="环境：osx 部署前准备：本机安装docker并启动 在当前服务器下载onpremise 项目 1git clone https://github.com/getsentry/onpremise.git  进入onpremise 项目，切换到stable1分支(实测最新分支，stamp协议无法发送报警邮件) 12cd onpremisegit checkout -b stable1 stable1">
@@ -332,7 +332,7 @@
 </li>
 <li><p>如果配置有更新(添加插件，更改邮箱配置)，重复5， 6</p>
 </li>
-<li><p>如需重新部署，进行如下操作，以下操作会清空sentry数据库，并充值superuser</p>
+<li><p>如需重新部署，进行如下操作，以下操作会清空sentry数据库，并重置superuser</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker-compose build --pull</span><br><span class="line">docker-compose run --rm web upgrade</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
 </li>
 </ul>

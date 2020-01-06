@@ -335,7 +335,7 @@
 </li>
 <li><p>如果配置有更新(添加插件，更改邮箱配置)，重复5， 6</p>
 </li>
-<li><p>如需重新部署，进行如下操作，以下操作会清空sentry数据库，并充值superuser</p>
+<li><p>如需重新部署，进行如下操作，以下操作会清空sentry数据库，并重置superuser</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker-compose build --pull</span><br><span class="line">docker-compose run --rm web upgrade</span><br><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
